@@ -3,6 +3,7 @@ function Rectangle(width, height) {
   this.height = height;
 }
 
+// eslint-disable-next-line func-names
 Rectangle.prototype.getArea = function () {
   return this.width * this.height;
 };
@@ -106,7 +107,6 @@ const cssSelectorBuilder = {
     }
   },
 };
-
 
 module.exports = {
   Rectangle,
