@@ -1,10 +1,12 @@
 function getComposition(f, g) {
+  // eslint-disable-next-line func-names
   return function (x) {
     return f(g(x));
   };
 }
 
 function getPowerFunction(exponent) {
+  // eslint-disable-next-line func-names
   return function (x) {
     return x ** exponent;
   };
@@ -15,6 +17,7 @@ function getPolynom(...coefficients) {
     return null;
   }
 
+  // eslint-disable-next-line func-names
   return function (x) {
     let result = 0;
     let power = coefficients.length - 1;
@@ -31,6 +34,7 @@ function getPolynom(...coefficients) {
 
 function memoize(func) {
   const cache = {};
+  // eslint-disable-next-line func-names
   return function (...args) {
     const key = JSON.stringify(args);
     // eslint-disable-next-line no-prototype-builtins
@@ -44,7 +48,7 @@ function memoize(func) {
 }
 
 function retry(func, attempts) {
-  // eslint-disable-next-line consistent-return
+  // eslint-disable-next-line consistent-return,func-names
   return function () {
     for (let i = 0; i <= attempts; i += 1) {
       try {
@@ -69,6 +73,7 @@ function logger(func, logFunc) {
 }
 
 function partialUsingArguments(fn, ...args1) {
+  // eslint-disable-next-line func-names
   return function (...args2) {
     return fn(...args1, ...args2);
   };
@@ -76,6 +81,7 @@ function partialUsingArguments(fn, ...args1) {
 
 function getIdGeneratorFunction(startFrom) {
   let id = startFrom;
+  // eslint-disable-next-line func-names
   return function () {
     const currentId = id;
     id += 1;
